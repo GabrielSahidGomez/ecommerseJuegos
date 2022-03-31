@@ -13,9 +13,7 @@ const NavBar = () => {
             <div className="header">
             <h1>Tienda de Juegos</h1>
             </div>
-            <div>
             <CartWidget/>
-            </div>
         </nav>
         
     )
