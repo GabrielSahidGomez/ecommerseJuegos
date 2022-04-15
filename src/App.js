@@ -2,7 +2,7 @@ import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import ItemListConstainer from "./components/ItemListContainer/ItemListcontainer";
+import ItemListConstainer from "./components/ItemListContainer/ItemListContainer";
 import ItemCount from "./components/ItemCount/ItemCount.js"
 
 function App() {

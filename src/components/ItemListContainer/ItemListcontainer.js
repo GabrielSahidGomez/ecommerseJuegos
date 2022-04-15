@@ -1,7 +1,23 @@
+import { useState, useEffect } from "react"
+import ItemList from "../ItemList/ItemList"
+import { getProducts } from "../../asyncmock"
+
 const ItemListConstainer = (props) => {
-    console.log(props.greeting)
+    const [products, setProducts] = useState([])
+
+    useEffect (() => {
+        getProducts().then(prods => {
+            setProducts(prods)
+        })
+    }, [])
+
+
+
     return(
-        <h3>{props.greeting}</h3>
+        <div>
+            <h1>{props.getProducts}</h1>
+            <ItemList products={products}/>
+        </div>
     )
 }
-export default ItemListConstainer;
+export default ItemListConstainer
