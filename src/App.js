@@ -4,6 +4,7 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListConstainer from "./components/ItemListContainer/ItemListContainer";
 import ItemCount from "./components/ItemCount/ItemCount.js"
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
@@ -14,12 +15,11 @@ function App() {
   return (
 
     <>
+        <NavBar />
         <div className="header">
             <h1>Tienda de Juegos</h1>
         </div>
         <ItemListConstainer greeting={"Bienvenid@ a mi tienda de juegos"}/>
-
-        <NavBar />
         
         <ItemCount initial={0} stock={10} onAdd={handleOnAdd}/>
         

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
-import ItemList from "../ItemList/ItemList"
 import { getProducts } from "../../asyncmock"
+import ItemList from "../ItemList/ItemList"
 
 const ItemListConstainer = (props) => {
     const [products, setProducts] = useState([])

@@ -1,9 +1,17 @@
-.container {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.flex-items{
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  order: 0;
+  border: 1px solid rgb(29, 28, 28);
+  margin: 10px;
+  background-color: rgb(90, 5, 5);
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.tamañoimg{
+  width: auto;
+  height: 300px;
 }
 .css-button-sliding-to-top--green {
     min-width: 130px;

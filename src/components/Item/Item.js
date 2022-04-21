@@ -1,14 +1,15 @@
 import './Item.css'
 
-const Item = ({name, img, id}) => {
+const Item = ({name, img, id, price}) => {
     return (
-        <div className='container'>
+        <div className='flex-items'>
 
         <section>
             <picture>
-                <img src={img} alt={name}/>
+                <img className='tamañoimg'src={img} alt={name}/>
             </picture>
             <h3>{name}</h3>
+            <h2>Precio: {price}</h2>
             <button className='css-button-sliding-to-top--green'>Ver detalle</button>
         </section>
         </div>
