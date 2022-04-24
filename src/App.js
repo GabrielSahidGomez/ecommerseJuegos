@@ -22,6 +22,7 @@ function App() {
         <ItemListConstainer greeting={"Bienvenid@ a mi tienda de juegos"}/>
         
         <ItemCount initial={0} stock={10} onAdd={handleOnAdd}/>
+        <ItemDetailContainer />
         
 
     </>

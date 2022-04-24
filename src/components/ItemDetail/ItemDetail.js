@@ -1,4 +1,5 @@
 import { useState , useEffect} from "react"
+import "./ItemDetail.css"
 
 const ItemDetail = ({id, name, img, category, description, price}) => {
     
@@ -22,7 +23,7 @@ const ItemDetail = ({id, name, img, category, description, price}) => {
             <div className="card-body">
             <h5 className="card-title">{name}</h5>
             <p className="card-text">Categoria: {category}</p>
-            <p className="card-text">Descripcion: {description}</p>
+            <p className="text">Descripcion: {description}</p>
             <p className="card-text">Precio: ${price}</p>
             </div>
         </div>

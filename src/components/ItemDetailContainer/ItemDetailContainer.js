@@ -6,10 +6,8 @@ const ItemDetailContainer = ({ setCart, cart}) => {
     const [product, setProduct] = useState()
     const [loading, setLoading] = useState(true)
 
-    const { productId} = useParams()
-
     useEffect(() => {
-        getProductsById(productId).then(item => {
+        getProductsById(1).then(item => {
             setProduct(item)
         }).catch(err => {
             console.log(err)
@@ -17,10 +15,7 @@ const ItemDetailContainer = ({ setCart, cart}) => {
             setLoading(false)
         })
 
-        return (() => {
-            setProduct()
-        })
-    }, [productId])
+    }, [])
 
     return (
         <div>
