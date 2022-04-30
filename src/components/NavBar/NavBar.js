@@ -1,12 +1,22 @@
 import "./NavBar.css"
 import CartWidget from "../CartWidget/CartWidget"
+import { Link, NavLink } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { getCategories } from "../../asyncmock"
 
-const NavBar = (props) => {
-    console.log(props.children)
-    return(
-        //Navbar
+const NavBar = () => {
+  const [categories,setCategories] = useState([])
 
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  useEffect(()=>{
+      getCategories().then(categories =>{
+          setCategories(categories)
+      })
+  }, [])
+
+  return(
+    //asdasdasd
+       <div className="container">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -37,8 +47,15 @@ const NavBar = (props) => {
             <CartWidget/>
         </div>
       </nav>
-        
-    )
+        <nav>
+          <div className='Categories'>
+                {categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`}
+                className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}
+                >{cat.description}</NavLink> )}
+                </div>
+        </nav>
+      </div>
+    
+          )
 }
-
 export default NavBar

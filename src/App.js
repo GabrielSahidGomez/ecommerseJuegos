@@ -3,30 +3,27 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListConstainer from "./components/ItemListContainer/ItemListContainer";
-import ItemCount from "./components/ItemCount/ItemCount.js"
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-
-  const handleOnAdd = (quantity) => {
-    console.log(`se agregaron ${quantity} juegos`)
-  }
-
+  
   return (
 
-    <>
-        <NavBar />
+    <div className="App">
         <div className="header">
             <h1>Tienda de Juegos</h1>
         </div>
-        <ItemListConstainer greeting={"Bienvenid@ a mi tienda de juegos"}/>
-        
-        <ItemCount initial={0} stock={10} onAdd={handleOnAdd}/>
-        <ItemDetailContainer />
-        
-
-    </>
-
+      <BrowserRouter>
+          <NavBar />
+          <Routes>
+          <Route path='/category/:categoryId' element={<ItemListConstainer/>}/>
+          <Route path='/detail/:productId' element={<ItemDetailContainer />} />
+          <Route path='*' element={<h1>NOT FOUND 404</h1>}/>
+          
+          </Routes>
+      </BrowserRouter>
+      </div>
   );
 
 }

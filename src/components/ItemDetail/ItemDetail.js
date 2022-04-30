@@ -1,34 +1,17 @@
-import { useState , useEffect} from "react"
 import "./ItemDetail.css"
 
-const ItemDetail = ({id, name, img, category, description, price}) => {
-    
-
-    const { addItem } = useState()
-
-    const handleAdd = (count) => {
-    
-        const objProd = {
-            id, name, price, description
-        }
-
-        addItem(objProd)
-        
-    }
-    
+const ItemDetail = ({ title, category, price, description, pictureUrl}) =>{
+       
     return (
-        <div className="col">
-        <div className="card mt-2">
-            <img src={img} className="card-img-top" alt={name} />
-            <div className="card-body">
-            <h5 className="card-title">{name}</h5>
-            <p className="card-text">Categoria: {category}</p>
-            <p className="text">Descripcion: {description}</p>
-            <p className="card-text">Precio: ${price}</p>
+            <div className='container-product'>
+                <h1 className="title"> Hola</h1>
+                <picture className='sombra'>
+                    <img className="responsive" src={pictureUrl} alt={title}/>
+                </picture>
+                <p>{title} por ${price}</p>
+                <p className="text">{description}</p>
+                <p className="card-text">categoria: {category}</p>
             </div>
-        </div>
-        </div>
-    )
+            )
 }
-
 export default ItemDetail

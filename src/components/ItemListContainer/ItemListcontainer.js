@@ -1,23 +1,30 @@
-import { useState, useEffect } from "react"
+
+import {useState, useEffect} from 'react'
 import { getProducts } from "../../asyncmock"
 import ItemList from "../ItemList/ItemList"
+import { useParams } from 'react-router-dom'
 
-const ItemListConstainer = (props) => {
+
+const ItemListContainer = (props) =>{
+    
     const [products, setProducts] = useState([])
 
-    useEffect (() => {
-        getProducts().then(prods => {
+    const { categoryId } = useParams()
+
+     useEffect(()=>{
+        getProducts(categoryId).then(prods =>{
             setProducts(prods)
+        }).catch(error =>{
+            console.log(error)
         })
-    }, [])
-
-
+    },[categoryId])
 
     return(
-        <div>
-            <h1>{props.getProducts}</h1>
-            <ItemList products={products}/>
-        </div>
+        <>
+        <h1>{props.greeting}</h1>
+        <ItemList products={products}/>
+        </>
+
     )
 }
-export default ItemListConstainer
+export default ItemListContainer
